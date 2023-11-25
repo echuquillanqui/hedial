@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Patient extends Model
+class Predial extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
+    Const LMV = 1;
+    Const MJS = 2;
+
     public function predial()
     {
-        return $this->belongsTo(Predial::class);
+        return $this->hasOne(Predial::class);
     }
-
 }

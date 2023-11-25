@@ -20,16 +20,12 @@ return new class extends Migration
             $table->string('othername')->nullable();
             $table->string('surname');
             $table->string('lastname');
-            $table->string('hcl');
-            $table->enum('covid', ['SI', 'NO'])->default('NO');
             $table->string('sex');
             $table->date('birthday');
             $table->date('start_dial');
-            $table->string('access');
-            $table->string('dry_weight');
-            $table->enum('frecuency', [Patient::LMV, Patient::MJS]);
             $table->string('code')->unique();
             $table->string('scan')->nullable();
+            $table->enum('status', ['ACTIVO', 'INACTIVO'])->default('ACTIVO');
 
             $table->timestamps();
         });
